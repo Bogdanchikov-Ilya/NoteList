@@ -1,6 +1,6 @@
 <template>
-	<div class="notes">
-		<div class="note" v-for="(note, index) in notes" :key="index">
+	<div class="notes" v-bind:class="{ grid:grid }">
+		<div class="note" v-for="(note, index) in notes" :key="index" v-bind:class="{ note__grid:grid }">
 
 			<div class="note__title">
 				<p>{{note.title}}</p>
@@ -22,8 +22,10 @@
 export default {
 	props: {
 	    notes: {
-	        type:Array,
 			required: true
+		},
+		grid: {
+	        type: Boolean,
 		}
 	},
 	methods: {
@@ -45,6 +47,16 @@ export default {
 	margin-top: 30px;
 	align-items: center;
 	flex-wrap: wrap;
+	transition: .2s linear;
+}
+
+.grid{
+	width: 80%;
+	margin: auto;
+	margin-top: 30px;
+	align-items: center;
+	flex-wrap: wrap;
+	transition: .2s linear;
 }
 
 .note{
@@ -54,7 +66,16 @@ export default {
 	text-align: unset;
 	padding: 15px;
 	margin-bottom: 20px;
+	transition: .2s linear;
 }
+
+.note__grid{
+	width: 100% !important;
+	margin: auto;
+	margin-bottom: 20px !important;
+	transition: .2s linear;
+}
+
 .note__title{
 	font-size: 21px;
 	color: #550fdc;
