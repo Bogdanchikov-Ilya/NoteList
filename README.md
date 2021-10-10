@@ -1,6 +1,8 @@
-# note
+# Простой заметочник на Vue js 2
 
-## Project setup
+#### Реализованы добавление, удаление и поиск по заметкам
+
+## Установка
 ```
 npm install
 ```
@@ -14,6 +16,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
